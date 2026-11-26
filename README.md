@@ -2,7 +2,7 @@
 
 [![Validate](https://github.com/AndrewBarber/ha-wdc-school-meals/actions/workflows/validate.yml/badge.svg)](https://github.com/AndrewBarber/ha-wdc-school-meals/actions/workflows/validate.yml)
 [![Tests](https://github.com/AndrewBarber/ha-wdc-school-meals/actions/workflows/tests.yml/badge.svg)](https://github.com/AndrewBarber/ha-wdc-school-meals/actions/workflows/tests.yml)
-[![Buy me a beer](https://img.shields.io/badge/Buy%20me%20a%20beer%3F-5F7FFF?logo=buymeacoffee&logoColor=white&style=flat)](https://buymeacoffee.com/andrewbarber)
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-5F7FFF?logo=buymeacoffee&logoColor=white&style=flat)](https://buymeacoffee.com/andrewbarber)
 
 What's for lunch at school today? This integration reads the menus West
 Dunbartonshire Council publishes and shows them in Home Assistant, per child.
@@ -239,7 +239,7 @@ Runs ruff and pytest in a throwaway uv environment pinned to Home Assistant
 
 This is a free side project. If it saves you a trip to the school website and you
 fancy saying thanks, you can
-[buy me a beer](https://buymeacoffee.com/andrewbarber). Never expected, always
+[buy me a coffee](https://buymeacoffee.com/andrewbarber). Never expected, always
 appreciated.
 
 ## Licence
