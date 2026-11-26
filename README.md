@@ -2,7 +2,7 @@
 
 [![Validate](https://github.com/AndrewBarber/ha-wdc-school-meals/actions/workflows/validate.yml/badge.svg)](https://github.com/AndrewBarber/ha-wdc-school-meals/actions/workflows/validate.yml)
 [![Tests](https://github.com/AndrewBarber/ha-wdc-school-meals/actions/workflows/tests.yml/badge.svg)](https://github.com/AndrewBarber/ha-wdc-school-meals/actions/workflows/tests.yml)
-[![Buy me a beer](https://img.shields.io/badge/Buy%20me%20a%20beer%3F-5F7FFF?logo=buymeacoffee&logoColor=white&style=flat)](https://buymeacoffee.com/andrewbarber)
+[![Buy me a beer](https://img.shields.io/badge/%F0%9F%8D%BB%20Buy%20me%20a%20beer%3F-5F7FFF?style=flat)](https://buymeacoffee.com/andrewbarber)
 
 What's for lunch at school today? This integration reads the menus West
 Dunbartonshire Council publishes and shows them in Home Assistant, per child.
