@@ -1,0 +1,13 @@
+get_menu:
+  fields:
+    entity_id:
+      required: true
+      example: sensor.alex_school_meals_today
+      selector:
+        entity:
+          integration: wdc_school_meals
+    date:
+      required: false
+      example: "2026-11-10"
+      selector:
+        date:

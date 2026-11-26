@@ -1,0 +1,25 @@
+# A published release must match the manifest version, so HACS shows the right
+# version. Tag as v0.1.0 for manifest version 0.1.0.
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Tag matches manifest version
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          version=$(jq -r .version custom_components/wdc_school_meals/manifest.json)
+          if [ "v$version" != "$TAG" ]; then
+            echo "::error::Release $TAG does not match manifest version $version"
+            exit 1
+          fi

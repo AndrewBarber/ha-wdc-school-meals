@@ -1,0 +1,13 @@
+{
+  "domain": "wdc_school_meals",
+  "name": "West Dunbartonshire School Meals",
+  "codeowners": ["@AndrewBarber"],
+  "config_flow": true,
+  "documentation": "https://github.com/AndrewBarber/ha-wdc-school-meals",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/AndrewBarber/ha-wdc-school-meals/issues",
+  "requirements": ["beautifulsoup4==4.13.3"],
+  "single_config_entry": true,
+  "version": "0.2.0"
+}
