@@ -1,0 +1,17 @@
+# Tool settings only. This repo is not a Python package: run tests with
+# scripts/test, which builds an isolated uv environment from requirements_test.txt.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+target-version = "py314"
+
+[tool.ruff.lint]
+extend-select = ["I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["custom_components"]

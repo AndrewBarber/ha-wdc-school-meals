@@ -1,0 +1,255 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "West Dunbartonshire School Meals",
+        "description": "Unofficial, and not affiliated with West Dunbartonshire Council. It shows the school meal menus the council publishes on its website, which can change at short notice and may not match what a child is served. Always check menus and allergens with the school yourself; do not rely on this integration, especially for allergies or medical diets. After setup, add each child and their school from the integration page."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Already set up. Add another child from the integration page instead."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "weeks_ahead": "Weeks ahead",
+          "allergens": "Named allergens"
+        },
+        "data_description": {
+          "weeks_ahead": "How many weeks after this one the lunch calendars show.",
+          "allergens": "Also read each dish's page for its allergens (for example \"Gluten, Wheat, Milk\"). About 20 extra requests the first day, then a few a week."
+        }
+      }
+    }
+  },
+  "config_subentries": {
+    "child": {
+      "entry_type": "Child",
+      "initiate_flow": {
+        "user": "Add child",
+        "reconfigure": "Change school"
+      },
+      "step": {
+        "user": {
+          "title": "Add a child",
+          "menu_options": {
+            "school": "Pick their school",
+            "menu": "Pick a menu instead"
+          }
+        },
+        "reconfigure": {
+          "title": "Change school",
+          "menu_options": {
+            "school": "Pick their school",
+            "menu": "Pick a menu instead"
+          }
+        },
+        "school": {
+          "title": "School",
+          "data": {
+            "school": "School or nursery",
+            "name": "Who it is for"
+          },
+          "data_description": {
+            "school": "Council schools and nurseries. Private nurseries do their own food and are not listed.",
+            "name": "Optional. With a name the device is called, for example, \"Alex's School Meals\"."
+          }
+        },
+        "stage": {
+          "title": "Which menu?",
+          "description": "{school} has more than one menu. Pick the one your child eats.",
+          "data": {
+            "menu": "Menu"
+          }
+        },
+        "menu": {
+          "title": "Menu",
+          "data": {
+            "menu": "Menu",
+            "name": "Who it is for"
+          },
+          "data_description": {
+            "name": "Optional. With a name the device is called, for example, \"Alex's School Meals\"."
+          }
+        },
+        "allergies": {
+          "title": "Allergies",
+          "description": "Optional. Pick any allergens this child must avoid. Their device then gets two sensors that turn on when a dish that day lists one, using the council's published allergen information. That information has \"may contain\" warnings on some dishes only and may not match an adapted menu agreed with the school, so always check with the school.",
+          "data": {
+            "watch_allergens": "Allergens to watch"
+          },
+          "data_description": {
+            "watch_allergens": "Leave empty to skip. Watching any allergen also reads each dish's page for its allergens."
+          }
+        }
+      },
+      "abort": {
+        "already_configured": "This child is already set up for that school or menu."
+      }
+    }
+  },
+  "selector": {
+    "menu": {
+      "options": {
+        "nursery": "Nursery",
+        "primary": "Primary",
+        "secondary": "Secondary",
+        "kilpatrick_primary": "Kilpatrick Primary",
+        "kilpatrick_high": "Kilpatrick High"
+      }
+    },
+    "allergen": {
+      "options": {
+        "celery": "Celery",
+        "gluten": "Cereals containing gluten (wheat, rye, barley, oats)",
+        "crustaceans": "Crustaceans",
+        "eggs": "Eggs",
+        "fish": "Fish",
+        "lupin": "Lupin",
+        "milk": "Milk",
+        "molluscs": "Molluscs",
+        "mustard": "Mustard",
+        "peanuts": "Peanuts",
+        "sesame": "Sesame",
+        "soya": "Soya",
+        "sulphites": "Sulphur dioxide and sulphites",
+        "tree_nuts": "Tree nuts"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "school_day": {
+        "name": "School day"
+      },
+      "watched_allergen_today": {
+        "name": "Watched allergen today"
+      },
+      "watched_allergen_next_school_day": {
+        "name": "Watched allergen next school day"
+      }
+    },
+    "calendar": {
+      "lunches": {
+        "name": "Lunches"
+      }
+    },
+    "sensor": {
+      "today": {
+        "name": "Today"
+      },
+      "next_school_day": {
+        "name": "Next school day"
+      },
+      "cycle_week": {
+        "name": "Cycle week"
+      },
+      "today_starter_dessert": {
+        "name": "Today starter/dessert"
+      },
+      "next_school_day_starter_dessert": {
+        "name": "Next school day starter/dessert"
+      },
+      "today_meal_1": {
+        "name": "Today meal 1"
+      },
+      "next_school_day_meal_1": {
+        "name": "Next school day meal 1"
+      },
+      "today_meal_2": {
+        "name": "Today meal 2"
+      },
+      "next_school_day_meal_2": {
+        "name": "Next school day meal 2"
+      },
+      "today_drinks": {
+        "name": "Today drinks"
+      },
+      "next_school_day_drinks": {
+        "name": "Next school day drinks"
+      },
+      "today_snack_am": {
+        "name": "Today snack AM"
+      },
+      "next_school_day_snack_am": {
+        "name": "Next school day snack AM"
+      },
+      "today_snack_pm": {
+        "name": "Today snack PM"
+      },
+      "next_school_day_snack_pm": {
+        "name": "Next school day snack PM"
+      },
+      "today_main_courses": {
+        "name": "Today main courses"
+      },
+      "next_school_day_main_courses": {
+        "name": "Next school day main courses"
+      },
+      "today_sides": {
+        "name": "Today sides"
+      },
+      "next_school_day_sides": {
+        "name": "Next school day sides"
+      },
+      "today_vegetables": {
+        "name": "Today vegetables"
+      },
+      "next_school_day_vegetables": {
+        "name": "Next school day vegetables"
+      },
+      "today_grab_and_go": {
+        "name": "Today grab and go"
+      },
+      "next_school_day_grab_and_go": {
+        "name": "Next school day grab and go"
+      },
+      "today_snacks": {
+        "name": "Today snacks"
+      },
+      "next_school_day_snacks": {
+        "name": "Next school day snacks"
+      }
+    }
+  },
+  "issues": {
+    "menu_layout_changed": {
+      "title": "The {menu} menu page has changed",
+      "description": "The council's {menu} menu page ({url}) no longer looks the way this integration expects, so lunches cannot be read. Check for an update to West Dunbartonshire School Meals, or report it on the project's issue tracker."
+    },
+    "term_dates_unreadable": {
+      "title": "School term dates cannot be read",
+      "description": "The council's term dates pages ({url}) could not be read, so holidays and in-service days are not known. Every weekday shows a lunch until this is fixed. Check for an update to West Dunbartonshire School Meals."
+    }
+  },
+  "services": {
+    "get_menu": {
+      "name": "Get menu",
+      "description": "Gets a child's school lunch for a date, as response data: the choices, every course, vegetarian and allergen flags, and why there is no lunch on a closed day.",
+      "fields": {
+        "entity_id": {
+          "name": "Child",
+          "description": "Any entity of the child's device, for example their Today sensor."
+        },
+        "date": {
+          "name": "Date",
+          "description": "The day to look up. Leave empty for today."
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "not_a_child_entity": {
+      "message": "{entity_id} is not an entity of a West Dunbartonshire School Meals child."
+    },
+    "not_loaded": {
+      "message": "West Dunbartonshire School Meals is not loaded."
+    },
+    "menu_unavailable": {
+      "message": "The {menu} menu could not be fetched from the council site."
+    }
+  }
+}

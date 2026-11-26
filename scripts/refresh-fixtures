@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Save fresh copies of the council pages the tests use, into tests/fixtures/.
+# Run when the site changes, then fix the parser and tests. Polite: one request
+# a second. Usage: scripts/refresh-fixtures
+#
+# The menu weeks are fixed dates in the 2026/27 academic year. When that year's
+# menus are gone from the site, pick new dates and update tests/conftest.py.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+base="https://www.west-dunbarton.gov.uk/schools-and-learning/schools"
+out="tests/fixtures"
+ua="ha-wdc-school-meals fixtures (+https://github.com/AndrewBarber/ha-wdc-school-meals)"
+mkdir -p "$out"
+
+fetch() {
+  curl -fsSL -A "$ua" -o "$out/$1" "$2"
+  echo "saved $1"
+  sleep 1
+}
+
+# menu page slug, then the Mondays (DD-MM-YYYY) to save
+weeks() {
+  local menu=$1; shift
+  for day in "$@"; do
+    fetch "$menu-$day.html" "$base/school-meals/$menu?date=$day"
+  done
+}
+
+weeks primary-menus 26-10-2026 02-11-2026 09-11-2026 16-11-2026 28-12-2026 04-01-2027 05-07-2027
+weeks secondary-menus 26-10-2026 02-11-2026
+weeks nursery-menus 26-10-2026
+weeks kilpatrick-primary-school 26-10-2026
+weeks kilpatrick-high-school 26-10-2026
+
+fetch term-dates.html "$base/term-dates"
+fetch term-date-202627.html "$base/term-dates/term-date-202627"
+fetch term-dates-202728.html "$base/term-dates/term-dates-202728"
+
+# Dish pages: a vegetarian main with allergens, a side with none, and a meat
+# main
+for dish in main/macaroni-cheese side-dish/peas main/beef-burger-in-a-bun-with-cheese; do
+  fetch "dish-${dish//\//-}.html" "$base/school-meals/meals/$dish"
+done

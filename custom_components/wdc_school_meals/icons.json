@@ -1,0 +1,111 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "school_day": {
+        "default": "mdi:school-outline",
+        "state": {
+          "on": "mdi:school"
+        }
+      },
+      "watched_allergen_today": {
+        "default": "mdi:alert-circle-outline",
+        "state": {
+          "on": "mdi:alert-circle"
+        }
+      },
+      "watched_allergen_next_school_day": {
+        "default": "mdi:alert-circle-outline",
+        "state": {
+          "on": "mdi:alert-circle"
+        }
+      }
+    },
+    "calendar": {
+      "lunches": {
+        "default": "mdi:food-apple"
+      }
+    },
+    "sensor": {
+      "today": {
+        "default": "mdi:silverware-fork-knife"
+      },
+      "next_school_day": {
+        "default": "mdi:calendar-arrow-right"
+      },
+      "cycle_week": {
+        "default": "mdi:numeric"
+      },
+      "today_starter_dessert": {
+        "default": "mdi:cupcake"
+      },
+      "next_school_day_starter_dessert": {
+        "default": "mdi:cupcake"
+      },
+      "today_meal_1": {
+        "default": "mdi:numeric-1-circle-outline"
+      },
+      "next_school_day_meal_1": {
+        "default": "mdi:numeric-1-circle-outline"
+      },
+      "today_meal_2": {
+        "default": "mdi:numeric-2-circle-outline"
+      },
+      "next_school_day_meal_2": {
+        "default": "mdi:numeric-2-circle-outline"
+      },
+      "today_drinks": {
+        "default": "mdi:cup-water"
+      },
+      "next_school_day_drinks": {
+        "default": "mdi:cup-water"
+      },
+      "today_snack_am": {
+        "default": "mdi:food-apple-outline"
+      },
+      "next_school_day_snack_am": {
+        "default": "mdi:food-apple-outline"
+      },
+      "today_snack_pm": {
+        "default": "mdi:food-apple-outline"
+      },
+      "next_school_day_snack_pm": {
+        "default": "mdi:food-apple-outline"
+      },
+      "today_main_courses": {
+        "default": "mdi:silverware-fork-knife"
+      },
+      "next_school_day_main_courses": {
+        "default": "mdi:silverware-fork-knife"
+      },
+      "today_sides": {
+        "default": "mdi:bowl-mix-outline"
+      },
+      "next_school_day_sides": {
+        "default": "mdi:bowl-mix-outline"
+      },
+      "today_vegetables": {
+        "default": "mdi:carrot"
+      },
+      "next_school_day_vegetables": {
+        "default": "mdi:carrot"
+      },
+      "today_grab_and_go": {
+        "default": "mdi:food-takeout-box-outline"
+      },
+      "next_school_day_grab_and_go": {
+        "default": "mdi:food-takeout-box-outline"
+      },
+      "today_snacks": {
+        "default": "mdi:cookie-outline"
+      },
+      "next_school_day_snacks": {
+        "default": "mdi:cookie-outline"
+      }
+    }
+  },
+  "services": {
+    "get_menu": {
+      "service": "mdi:silverware-fork-knife"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Test dependencies. Keep in step with the HA Core version we test against:
+# pytest-homeassistant-custom-component 0.13.375 pins homeassistant==2026.10.4.
+pytest-homeassistant-custom-component==0.13.375
+# Lowest version the manifest allows (beautifulsoup4>=4.13.3), so tests cover the floor
+beautifulsoup4==4.13.3
